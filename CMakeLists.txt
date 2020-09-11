@@ -24,3 +24,27 @@ target_link_libraries(main_ekf
     PRIVATE
         ${Pangolin_LIBRARIES}
 )
+
+add_executable(main_ekf_with_eigen)
+target_sources(main_ekf_with_eigen
+    PRIVATE
+        main_ekf_with_eigen.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ekf_filter_eigen/gyroscope_bias_estimator.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/ekf_filter_eigen/lowpass_filter.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/ekf_filter_eigen/mean_filter.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/ekf_filter_eigen/median_filter.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/ekf_filter_eigen/pose_prediction.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/ekf_filter_eigen/pose_state.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/ekf_filter_eigen/sensor_data.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/ekf_filter_eigen/sensor_fusion_ekf.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/ekf_filter_eigen/gyroscope_bias_estimator.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ekf_filter_eigen/lowpass_filter.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ekf_filter_eigen/mean_filter.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ekf_filter_eigen/median_filter.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ekf_filter_eigen/pose_prediction.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ekf_filter_eigen/sensor_fusion_ekf.cpp
+)
+target_link_libraries(main_ekf_with_eigen
+    PRIVATE
+        ${Pangolin_LIBRARIES}
+)
