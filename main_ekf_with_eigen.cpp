@@ -46,7 +46,7 @@ int main(int argc, const char *argv[]) {
 
     pangolin::OpenGlRenderState s_cam( //摆放一个相机
         pangolin::ProjectionMatrix(1024, 768, 500, 500, 512, 389, 0.1, 1000),
-        pangolin::ModelViewLookAt(-1, 0, 1, 0, 0, 0, 1.0, 0.0, 0.0));
+        pangolin::ModelViewLookAt(0, -2, 1, 0, 0, 0, pangolin::AxisY));
 
     pangolin::View &d_cam = pangolin::CreateDisplay() //创建一个窗口
                                 .SetBounds(0.0, 1.0, pangolin::Attach::Pix(175), 1.0, -1024.0f / 768.0f)
