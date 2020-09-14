@@ -2,6 +2,9 @@
 find_package(Pangolin 0.4 REQUIRED)
 include_directories(${Pangolin_INCLUDE_DIRS})
 
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 add_executable(main_ekf)
@@ -48,7 +51,7 @@ target_link_libraries(main_ekf_with_eigen
     PRIVATE
         ${Pangolin_LIBRARIES}
 )
-
+# -----------------------------------------------------------
 add_executable(pangolin_test1)
 target_sources(pangolin_test1
     PRIVATE
@@ -57,4 +60,25 @@ target_sources(pangolin_test1
 target_link_libraries(pangolin_test1
     PRIVATE
         ${Pangolin_LIBRARIES}
+)
+# -----------------------------------------------------------
+add_executable(pangolin_test2)
+target_sources(pangolin_test2
+    PRIVATE
+        pangolin_test2.cpp
+)
+target_link_libraries(pangolin_test2
+    PRIVATE
+        ${Pangolin_LIBRARIES}
+)
+# -----------------------------------------------------------
+add_executable(pangolin_test3)
+target_sources(pangolin_test3
+    PRIVATE
+        pangolin_test3.cpp
+)
+target_link_libraries(pangolin_test3
+    PRIVATE
+        ${Pangolin_LIBRARIES}
+        ${OpenCV_LIBS}
 )
