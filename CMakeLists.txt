@@ -49,12 +49,12 @@ target_link_libraries(main_ekf_with_eigen
         ${Pangolin_LIBRARIES}
 )
 
-add_executable(pangolin_test)
-target_sources(pangolin_test
+add_executable(pangolin_test1)
+target_sources(pangolin_test1
     PRIVATE
-        pangolin_test.cpp
+        pangolin_test1.cpp
 )
-target_link_libraries(pangolin_test
+target_link_libraries(pangolin_test1
     PRIVATE
         ${Pangolin_LIBRARIES}
 )
