@@ -82,3 +82,23 @@ target_link_libraries(pangolin_test3
         ${Pangolin_LIBRARIES}
         ${OpenCV_LIBS}
 )
+# -----------------------------------------------------------
+add_executable(pangolin_test4)
+target_sources(pangolin_test4
+    PRIVATE
+        pangolin_test4.cpp
+)
+target_link_libraries(pangolin_test4
+    PRIVATE
+        ${Pangolin_LIBRARIES}
+)
+# -----------------------------------------------------------
+add_executable(pangolin_test5)
+target_sources(pangolin_test5
+    PRIVATE
+        pangolin_test5.cpp
+)
+target_link_libraries(pangolin_test5
+    PRIVATE
+        ${Pangolin_LIBRARIES}
+)
