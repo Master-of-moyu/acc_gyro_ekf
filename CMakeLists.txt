@@ -102,3 +102,5 @@ target_link_libraries(pangolin_test5
     PRIVATE
         ${Pangolin_LIBRARIES}
 )
+
+add_subdirectory(example)
